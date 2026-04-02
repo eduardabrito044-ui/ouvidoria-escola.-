@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Ouvidoria Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+
+    <nav class="sidebar glass">
+        <h2>Menu</h2>
+        <button onclick="mudarAba('forum')">💬 Fórum</button>
+        <button onclick="mudarAba('mural')">💡 Mural de Ideias</button>
+        <button onclick="mudarAba('sentimentos')">🎭 Sentimentos</button>
+        <button onclick="mudarAba('ouvidoria')">🛡️ Denúncia/Desabafo</button>
+        <button onclick="mudarAba('feedback')">🏫 Sobre a Escola</button>
+        <button onclick="mudarAba('contatos')">📞 Contatos Rápidos</button>
+    </nav>
+
+    <div class="main-content">
+        <section id="forum" class="aba active glass">
+            <h2>Fórum de Discussão</h2>
+            <div id="lista-mensagens" class="feed">
+                <div class="post"><strong>@Aluno123:</strong> Alguém sabe o tema da feira de ciências?</div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="msg-forum" placeholder="Diga algo ou responda alguém...">
+                <button onclick="postarNoForum()">Enviar</button>
+            </div>
+        </section>
+
+        <section id="mural" class="aba glass">
+            <h2>Mural de Sugestões</h2>
+            <div id="lista-ideias" class="feed-grid"></div>
+            <div class="input-area">
+                <input type="text" id="nova-ideia" placeholder="Sua ideia para a escola...">
+                <button onclick="postarIdeia()">Sugerir</button>
+            </div>
+        </section>
+
+        <section id="sentimentos" class="aba glass text-center">
+            <h2>Como a escola está hoje?</h2>
+            <div class="emoji-grid">
+                <button onclick="contarEmoji('feliz')">😊 <span id="count-feliz">0</span></button>
+                <button onclick="contarEmoji('triste')">😢 <span id="count-triste">0</span></button>
+                <button onclick="contarEmoji('bravo')">😡 <span id="count-bravo">0</span></button>
+                <button onclick="contarEmoji('ansioso')">😰 <span id="count-ansioso">0</span></button>
+            </div>
+            <p class="destaque-mood" id="humor-dominante">Destaque: Selecione um emoji!</p>
+        </section>
+
+        <section id="feedback" class="aba glass">
+            <h2>O que melhorar na escola?</h2>
+            <textarea id="feedback-texto" placeholder="Fale sobre a comida, uniforme ou tratamento..."></textarea>
+            <button class="btn-rocho" onclick="enviarFeedback()">Enviar Opinião</button>
+        </section>
+
+        <section id="contatos" class="aba glass">
+            <h2>Central de Ajuda</h2>
+            <div class="contatos-grid">
+                <a href="https://wa.me/5589981259467" target="_blank" class="btn-contato wa">Chamar no WhatsApp</a>
+                <a href="https://instagram.com/m.eduarda.brito25" target="_blank" class="btn-contato ig">Instagram da Escola</a>
+                <a href="mailto:eduardabrito044@gmail.com" class="btn-contato mail">Enviar E-mail</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
